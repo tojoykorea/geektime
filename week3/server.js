@@ -1,17 +1,11 @@
 const http = require("http");
 
 const server = http.createServer((req, res) => {
-  let body = [];
-  req.on('error', (err) => {
-    console.error(err);
-  }).on('data', chunk => {
-    // body.push(chunk.tostring());
-    body.push(chunk);
-  }).on('end', () => {
-    // Buffer是处理二进制数据的缓冲区
-    body = Buffer.concat(body).toString();
-    console.log("body:", body);
-  res.writeHead(200,{'Content-Type':'text/html'});
+  console.log("request received");
+  console.log(req.headers);
+  res.setHeader('Content-Type','text/html');
+  res.setHeader('X-Foo','bar');
+  res.writeHead(200,{'Content-Type':'text/plain'});
   res.end(
     `<html maaa=a >
     <head>
@@ -32,8 +26,9 @@ const server = http.createServer((req, res) => {
         <img />
       </div>
     </body>
-    </html>`);
-  });
+    </html>`
+  );
 });
+
 console.log("server started");
 server.listen(8088);
