@@ -1,13 +1,17 @@
 {
-  "name": "jsx",
+  "name": "toy-javascript_week8",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "css-loader": "^5.2.6",
+    "style-loader": "^2.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/plugin-transform-react-jsx": "^7.14.3",
