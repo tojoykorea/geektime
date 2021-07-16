@@ -1,14 +1,13 @@
 {
   "name": "publish-server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "star": "node ./server.js",
+    "publish": "scp -r -P 8022 ./* ryan@127.0.0.1:/home/ryan/publish-server"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "unzipper": "^0.10.11"
+    "unzipper": "0.10.11"
   }
 }
